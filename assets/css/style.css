@@ -211,6 +211,20 @@ main {
     font-size: 50px;
 }
 
+.box-date {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.box-date p,
+.date {
+    margin-top: 5px;
+    color: white;
+    font-size: 12px;
+}
+
+
 /* .box-timer-btn-clear {
     margin-top: 20px;
     display: flex;
