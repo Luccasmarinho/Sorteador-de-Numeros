@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Sorteador de números</title>
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+    <main>
+        <section class="content">
+            <h3 class="title">Sorteador de números</h3>
+            <form action="#" class="container-input">
+                <div class="input-area">
+                    <div class="input-area-max-min">
+                        <label for="min-input" class="text-input">Mínimo</label>
+                        <input type="number" name="min" id="min-input">
+                    </div>
+                    <div class="input-area-max-min">
+                        <label for="max-input" class="text-input">Máximo</label>
+                        <input type="number" name="max" id="max-input">
+                    </div>
+                </div>
+                <div class="input-area-quantity">
+                    <label for="quantity-input" class="text-input">Sortear quantos números?</label>
+                    <input type="number" name="quantity" id="quantity-input" value="1">
+                    <!-- <button class="btn-quantity-minus">-</button>
+                    <button class="btn-quantity-plus">+</button> -->
+                    <a href="#" class="btn-quantity-minus">-</a>
+                    <a href="#" class="btn-quantity-plus">+</a>
+                </div>
+                <button class="btn-sortear">SORTEAR</button>
+            </form>
+            
+            <section class="hidden">
+                <h2 class="text-result">Resultado do Sorteio:</h2>
+                <div class="circle-result">
+                    <span></span>
+                </div>
+            </section>
+            <section class="box-timer-hidden">
+                <span class="timer">3</span>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
