@@ -82,7 +82,7 @@ const timer = () => {
             btnSortear.textContent = "SORTEAR"
             sorteio()
         }
-    }, 1000);
+    }, 900);
 }
 
 btnPlus.addEventListener("click", increaseValue);
