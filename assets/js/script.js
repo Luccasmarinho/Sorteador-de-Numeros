@@ -10,16 +10,22 @@ form.addEventListener("submit", (event) => {
 
     timer()
 
-    // document.querySelector(".hidden").classList.remove("hidden")
-    // document.querySelector(".box-timer-hidden").classList.remove("box-timer-hidden")
-    // sorteio()
-
+    removeAllElementChild("circle-result")
 
 })
 
-const resetPage = () => {
-    location.reload()
+const date = () => {
+    const data = new Date()
+    const dateFormated = data
+    .toLocaleString("pt-Br")
+    return dateFormated
 }
+
+// const resetPage = () => {
+//     location.reload()
+// }
+
+// document.querySelector(".btn-clear").addEventListener("click", resetPage);
 
 const increaseValue = () => {
     const input = document.querySelector("#quantity-input");
@@ -52,14 +58,12 @@ const sorteio = () => {
     for (let i = 0; i < quantityValueFormatted; i++) {
         const randomNumbers = Math.round(Math.random() * (maxValueFormated - minValueFormated) + minValueFormated)
         numerosSorteados.push(randomNumbers)
-        // document.querySelector(".result-final").innerHTML = `${numerosSorteados.join(", ")}`
     }
 
     numerosSorteados.forEach((number) => {
         const newSpan = document.createElement("span")
         newSpan.className = "result-final"
         document.querySelector('.circle-result').appendChild(newSpan)
-
         newSpan.innerHTML = `${number}`
     })
 
@@ -69,23 +73,39 @@ const removeClass = (className) => {
     document.querySelector(`.${className}`).classList.remove(className)
 }
 
+const addClass = (element, classNameAdd) => {
+    document.querySelector(element).classList.add(classNameAdd)
+}
+
+const removeAllElementChild = (className) => {
+    document.querySelector(`.${className}`).innerHTML = ``
+}
+
 const timer = () => {
+    addClass("#hidden", "hidden")
+    addClass("#box-timer-hidden", "box-timer-hidden")
+
     btnSortear.textContent = "SORTEANDO  .  .  ."
     removeClass("box-timer-hidden")
+
     const timerDecrement = setInterval(() => {
         second -= 1
         document.querySelector(".timer").innerHTML = `${second}`
-        if (second < 1) {
+
+        if (second === 0) {
             clearInterval(timerDecrement)
             document.querySelector(".timer").innerHTML = ``
             removeClass("hidden")
             btnSortear.textContent = "SORTEAR"
             sorteio()
+            document.querySelector(".date").innerHTML = date()
+            return
         }
-    }, 900);
+        
+    }, 800);
+    second = document.querySelector(".timer").innerHTML = 3
 }
 
 btnPlus.addEventListener("click", increaseValue);
 btnMinus.addEventListener("click", decrementValue);
-
-
+// document.querySelector(".limpar").addEventListener("click", resetPage);

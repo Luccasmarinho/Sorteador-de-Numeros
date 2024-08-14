@@ -15,31 +15,33 @@
                 <div class="input-area">
                     <div class="input-area-max-min">
                         <label for="min-input" class="text-input">Mínimo</label>
-                        <input type="number" name="min" id="min-input" placeholder="Ex: 1">
+                        <input type="number" name="min" id="min-input" placeholder="Ex: 1" required>
                     </div>
                     <div class="input-area-max-min">
                         <label for="max-input" class="text-input">Máximo</label>
-                        <input type="number" name="max" id="max-input" placeholder="Ex: 100">
+                        <input type="number" name="max" id="max-input" placeholder="Ex: 100" max="10000" required>
                     </div>
                 </div>
                 <div class="input-area-quantity">
                     <label for="quantity-input" class="text-input">Sortear quantos números?</label>
                     <input type="number" name="quantity" id="quantity-input" value="1">
-                    <!-- <button class="btn-quantity-minus">-</button>
-                    <button class="btn-quantity-plus">+</button> -->
                     <a href="#" class="btn-quantity-minus">-</a>
                     <a href="#" class="btn-quantity-plus">+</a>
                 </div>
                 <button class="btn-sortear">SORTEAR</button>
             </form>
             
-            <section class="hidden">
+            <section class="hidden" id="hidden">
                 <h2 class="text-result">Resultado do Sorteio:</h2>
                 <div class="circle-result">
                     <span></span>
                 </div>
+                <span class="date"></span>
+                <!-- <div class="box-timer-btn-clear">
+                    <button class="btn-clear">Limpar</button>
+                </div> -->
             </section>
-            <section class="box-timer-hidden">
+            <section class="box-timer-hidden" id="box-timer-hidden">
                 <span class="timer">3</span>
             </section>
         </section>
